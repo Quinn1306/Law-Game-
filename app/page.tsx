@@ -8,7 +8,7 @@ const PHASES = [
   {
     phase: 'Phase 1',
     title: 'Knowledge Module',
-    desc: '12 timed questions on pre- and post-Omnibus I law',
+    desc: '13 timed questions on pre- and post-Omnibus I law',
     icon: '⚡',
   },
   {
@@ -137,7 +137,7 @@ export default function LandingPage() {
             >
               Start Training &rarr;
             </button>
-            <p className="text-white/30 text-xs mt-3">Phase 1 · 12 questions · ~15 minutes</p>
+            <p className="text-white/30 text-xs mt-3">Phase 1 · 13 questions · ~15 minutes</p>
           </motion.div>
         </section>
 

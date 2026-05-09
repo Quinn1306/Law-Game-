@@ -330,7 +330,7 @@ const scenario: Sublevel[] = [
         whyItMatters:
           'This outcome shows two distinct errors appearing in sequence: a substantive error (CSRD triggers CSDDD) compounded by a threshold confusion (applying the pre-Omnibus rather than post-Omnibus CSDDD scope). Both errors would lead to incorrect advice that EuroMed AG faces obligations it does not have — potentially prompting unnecessary and costly due diligence interventions.',
         legalBasis:
-          'Art. 4(2), Directive (EU) 2026/470 (Omnibus I); Art. 2(1), Directive (EU) 2024/1760 consolidated 18.03.2026',
+          'Art. 2(1)(a) as replaced by Art. 4(2)(a)(i), Directive (EU) 2026/470; Art. 2(1)(a), Directive (EU) 2024/1760 (original)',
         nextNode: 'final-sl2',
       },
       'outcome-2A-ii': {
@@ -421,7 +421,7 @@ const scenario: Sublevel[] = [
     title: 'Sub-Level 3: Civil Liability Fragmentation',
     tension: 'Art. 29(1) CSDDD harmonised liability standard deleted. Rome II Art. 4(1) directs claims to host-state law. 27 national systems now govern supply chain liability.',
     legalContext:
-      'Pre-Omnibus Art. 29(1) CSDDD created a harmonised EU civil liability standard for CSDDD breaches. Art. 29(7) overrode Rome II to direct claims to EU Member State courts. Art. 29(3)(d) granted standing to representative bodies. Omnibus I deleted Art. 29(1), Art. 29(7), and Art. 29(3)(d). What remains: Art. 29(2) — a "full compensation" guarantee conditional on national law first establishing liability. Civil liability is now determined by national law, typically the law of the country where damage occurred under Rome II Art. 4(1).',
+      'Pre-Omnibus Art. 29(1) CSDDD created a harmonised EU civil liability standard for CSDDD breaches. Art. 29(7) overrode Rome II to direct claims to EU Member State courts. Art. 29(3)(d) granted standing to representative bodies. Omnibus I deleted Art. 29(1) (by Art. 4(20)(a)), Art. 29(3)(d) (by Art. 4(20)(c)), and Art. 29(7) (by Art. 4(20)(f)) — all Directive (EU) 2026/470, effective 18 March 2026. What remains: Art. 29(2) as replaced by Art. 4(20)(b) — a "full compensation" guarantee conditional on national law first establishing liability. Civil liability is now determined by national law, typically the law of the country where damage occurred under Rome II Art. 4(1) (Regulation (EC) 864/2007).',
     situation:
       'A Bangladeshi garment worker was severely injured at the Tier 2 supplier disclosed in EuroMed AG\'s CSRD report. A Dutch trade union has filed a civil claim in the Amsterdam District Court on behalf of the worker. The claim argues that EuroMed AG\'s own CSRD report demonstrates it had knowledge of the unsafe conditions. EuroMed AG\'s litigation team asks you to identify the applicable legal framework for the liability analysis.',
     situationRole: 'Head of Litigation, EuroMed AG',
@@ -511,11 +511,11 @@ const scenario: Sublevel[] = [
         quality: 'incorrect',
         qualityLabel: 'Legally Incorrect — Applying Deleted Provision',
         legalPosition:
-          'There is no legal basis for applying Art. 29(1) by analogy after its deletion. Directives do not operate on analogy principles after legislative amendment. Art. 4(22) Directive (EU) 2026/470 deleted Art. 29(1) with effect from 18 March 2026. The effective date of the claim is after this date. A Dutch court would apply the current law, not the pre-amendment version. This argument would almost certainly be rejected at first instance.',
+          'There is no legal basis for applying Art. 29(1) by analogy after its deletion. Directives do not operate on analogy principles after legislative amendment. Art. 4(20)(a) of Directive (EU) 2026/470 deleted Art. 29(1) with effect from 18 March 2026. The effective date of the claim is after this date. A Dutch court would apply the current law, not the pre-amendment version. This argument would almost certainly be rejected at first instance.',
         whyItMatters:
           'This error arises from wishful legal reasoning — applying a provision that no longer exists because the pre-amendment standard was more favourable to the client\'s position (here, the claimant). Courts apply current law. The deletion of Art. 29(1) has immediate effect for claims arising after 18 March 2026.',
         legalBasis:
-          'Art. 4(22), Directive (EU) 2026/470 (Omnibus I), effective 18 March 2026; general principles of EU legislative amendment',
+          'Art. 4(20)(a), Directive (EU) 2026/470 (Omnibus I), effective 18 March 2026; general principles of EU legislative amendment',
         nextNode: 'final-sl3',
       },
       'outcome-3A-ii': {
@@ -525,11 +525,11 @@ const scenario: Sublevel[] = [
         quality: 'correction',
         qualityLabel: 'Self-Correction — Appropriate Professional Response',
         legalPosition:
-          'Conceding the point when confronted with clear legislative evidence is the correct professional response. Art. 29(1) was deleted. The analysis proceeds under Rome II. This self-correction, while appropriate, still leaves the full Rome II analysis to be completed — particularly which national law applies and what Art. 29(2) actually provides.',
+          'Conceding the point when confronted with clear legislative evidence is the correct professional response. Art. 29(1) was deleted by Art. 4(20)(a) of Directive (EU) 2026/470. The analysis proceeds under Rome II. This self-correction, while appropriate, still leaves the full Rome II analysis to be completed — particularly which national law applies and what Art. 29(2) actually provides.',
         whyItMatters:
           'In adversarial litigation, maintaining an argument based on a deleted provision after it has been disproved wastes court time and damages counsel credibility. Prompt correction and redirection to the correct legal framework is professionally appropriate.',
         legalBasis:
-          'Art. 4(22), Directive (EU) 2026/470; Regulation (EC) 864/2007 (Rome II), Art. 4(1)',
+          'Art. 4(20)(a), Directive (EU) 2026/470; Regulation (EC) 864/2007 (Rome II), Art. 4(1)',
         nextNode: 'final-sl3',
       },
       'outcome-3B-i': {
@@ -543,7 +543,7 @@ const scenario: Sublevel[] = [
         whyItMatters:
           'Forum = applicable law is the most common Rome II error in practice. It leads to fundamentally incorrect choice-of-law analysis. The deletion of Art. 29(7) (which would have directed claims to EU Member State courts) means the lex loci damni rule applies in full — and for supply chain claims, the damage almost always occurred in the Global South.',
         legalBasis:
-          'Art. 4(1), Regulation (EC) 864/2007 (Rome II) — lex loci damni; Art. 29(2), Directive (EU) 2024/1760 consolidated 18.03.2026; Art. 4(22), Directive (EU) 2026/470 deleting Art. 29(7)',
+          'Art. 4(1), Regulation (EC) 864/2007 (Rome II) — lex loci damni; Art. 29(2), Directive (EU) 2024/1760 consolidated 18.03.2026; Art. 4(20)(f), Directive (EU) 2026/470 deleting Art. 29(7)',
         nextNode: 'final-sl3',
       },
       'outcome-3B-ii': {
@@ -557,7 +557,7 @@ const scenario: Sublevel[] = [
         whyItMatters:
           'This outcome fully captures the Civil Liability Fragmentation: 27 national systems now govern supply chain liability; the lex loci damni rule directs most supply chain harm claims to the law of host states in the Global South; and Art. 29(2) is a remedy guarantee, not a liability creation mechanism. This is the most practically significant structural consequence of Omnibus I for access to justice.',
         legalBasis:
-          'Art. 4(1), Regulation (EC) 864/2007 (Rome II); Art. 29(2) retained, Art. 29(1), (3)(d), (7) deleted by Art. 4(22), Directive (EU) 2026/470; Rühl (2021) SSRN 3708196; Rühl (2022) SSRN 4024604',
+          'Art. 4(1), Regulation (EC) 864/2007 (Rome II); Art. 29(2) as replaced by Art. 4(20)(b); Art. 29(1) deleted by Art. 4(20)(a); Art. 29(3)(d) deleted by Art. 4(20)(c); Art. 29(7) deleted by Art. 4(20)(f) — all Directive (EU) 2026/470; Rühl (2021) SSRN 3708196; Rühl (2022) SSRN 4024604',
         nextNode: 'final-sl3',
       },
       'outcome-3C-i': {
@@ -594,7 +594,7 @@ const scenario: Sublevel[] = [
       required:
         'The applicable law is determined by Rome II Art. 4(1) lex loci damni. Damage occurred in Bangladesh, so Bangladeshi law governs liability. The Dutch court applies Bangladeshi tort law. EuroMed AG\'s CSRD sustainability report can be used as evidence of knowledge of the adverse conditions in a Bangladeshi law negligence claim. If Bangladeshi law establishes liability, Art. 29(2) CSDDD then guarantees full compensation as a remedy.',
       notRequired:
-        'There is no EU-level civil liability standard. Art. 29(1) CSDDD — the harmonised standard — was deleted by Art. 4(22) Directive (EU) 2026/470, effective 18 March 2026. Art. 29(7) — which redirected supply chain claims to EU Member State law — was also deleted. Art. 29(3)(d) — representative action standing — was deleted. CSRD creates no cause of action. The claim must be founded in and succeed under Bangladeshi national tort law.',
+        'There is no EU-level civil liability standard. Art. 29(1) CSDDD — the harmonised standard — was deleted by Art. 4(20)(a) of Directive (EU) 2026/470, effective 18 March 2026. Art. 29(7) — which redirected supply chain claims to EU Member State law — was deleted by Art. 4(20)(f). Art. 29(3)(d) — representative action standing — was deleted by Art. 4(20)(c). CSRD creates no cause of action. The claim must be founded in and succeed under Bangladeshi national tort law.',
       structuralTension:
         'The deletion of Art. 29(1) and Art. 29(7) means that supply chain civil liability is now fragmented across 27 national legal systems. Rome II Art. 4(1) directs most supply chain harm claims to the law of host states in the Global South — jurisdictions with varying judicial capacity, enforcement infrastructure, and substantive tort standards. Art. 29(2)\'s "full compensation guarantee" is conditional: it only operates where national law (typically host-state law) first establishes liability. The harmonised EU standard has been replaced by a patchwork with no guaranteed minimum floor for claimants.',
     },

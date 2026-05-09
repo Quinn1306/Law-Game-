@@ -47,7 +47,7 @@ export default function Phase1Page() {
         <div className="flex items-center justify-center gap-2 py-3 px-4">
           {['A', 'B'].map((s) => {
             const sectionStart = s === 'A' ? 0 : 6
-            const sectionEnd = s === 'A' ? 5 : 11
+            const sectionEnd = s === 'A' ? 5 : 12
             const active = currentQuestion >= sectionStart && currentQuestion <= sectionEnd
             const done = s === 'A' ? currentQuestion > 5 : false
             return (
