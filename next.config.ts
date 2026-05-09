@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: "/era-law-game",
+  basePath: "/Law-Game-",
   images: { unoptimized: true },
 };
 
