@@ -52,6 +52,7 @@ interface FinalResultCardProps {
   chosenOutcomeId: string
   tension?: string
   outcomePaths?: Record<string, string[]>
+  onBack?: () => void
 }
 
 export function FinalResultCard({
@@ -63,6 +64,7 @@ export function FinalResultCard({
   chosenOutcomeId,
   tension,
   outcomePaths,
+  onBack,
 }: FinalResultCardProps) {
   const [expandedId, setExpandedId] = useState<string | null>(chosenOutcomeId)
 
@@ -82,6 +84,15 @@ export function FinalResultCard({
           All pathways converge here — this is the actual legal position
         </div>
       </div>
+
+      {tension && (
+        <div className="bg-yellow-900/20 border border-yellow-400/30 rounded-xl p-4">
+          <h3 className="text-yellow-300 font-semibold uppercase text-xs mb-2 flex items-center gap-1.5">
+            <span aria-hidden="true">!</span> Legal Tension
+          </h3>
+          <p className="text-white/85 leading-relaxed text-sm">{tension}</p>
+        </div>
+      )}
 
       <div className="space-y-4 text-sm">
         <section className="bg-emerald-900/20 border border-emerald-500/20 rounded-xl p-4">
@@ -181,26 +192,27 @@ export function FinalResultCard({
         </div>
       )}
 
-      {tension && (
-        <div className="bg-blue-950/60 border border-blue-400/20 rounded-xl p-4">
-          <h3 className="text-blue-300 font-semibold uppercase text-xs mb-2 flex items-center gap-1.5">
-            <span aria-hidden="true">⟳</span> Legal Tension
-          </h3>
-          <p className="text-white/70 leading-relaxed text-sm">{tension}</p>
-        </div>
-      )}
-
       <div className="text-white/20 text-xs border-t border-white/10 pt-3 leading-relaxed font-mono">
         Path taken: {path.join(' → ')}
       </div>
 
-      <button
-        onClick={onNext}
-        className="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-semibold text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300"
-        autoFocus
-      >
-        {isLast ? 'View Final Results →' : 'Next Sub-Level →'}
-      </button>
+      <div className="flex gap-3">
+        {onBack && (
+          <button
+            onClick={onBack}
+            className="flex-1 py-3 bg-white/5 hover:bg-white/10 text-white/70 hover:text-white rounded-xl font-semibold text-sm transition-colors border border-white/10"
+          >
+            ← Back
+          </button>
+        )}
+        <button
+          onClick={onNext}
+          className={`py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-semibold text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300 ${onBack ? 'flex-[2]' : 'w-full'}`}
+          autoFocus
+        >
+          {isLast ? 'View Final Results →' : 'Next Sub-Level →'}
+        </button>
+      </div>
     </motion.div>
   )
 }

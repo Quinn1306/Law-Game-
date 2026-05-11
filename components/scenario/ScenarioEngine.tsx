@@ -147,6 +147,7 @@ export function ScenarioEngine({
               chosenOutcomeId={breadcrumb.find((id) => sublevel.nodes[id]?.type === 'outcome') ?? ''}
               tension={sublevel.tension}
               outcomePaths={computeOutcomePaths(sublevel.nodes, sublevel.entryNode)}
+              onBack={goBack}
             />
           ) : currentNode?.type === 'outcome' ? (
             <OutcomeCard
@@ -161,6 +162,7 @@ export function ScenarioEngine({
               onSelect={navigate}
               onBack={goBack}
               canGoBack={breadcrumb.length > 1 && !showFinal}
+              useRomanNumerals={breadcrumb.length > 1}
             />
           )}
         </motion.div>

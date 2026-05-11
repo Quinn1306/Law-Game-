@@ -2,14 +2,17 @@
 import { motion } from 'motion/react'
 import type { DecisionNodeData } from '@/data/phase2-scenario'
 
+const ROMAN = ['I', 'II', 'III', 'IV']
+
 interface DecisionNodeProps {
   node: DecisionNodeData
   onSelect: (nextNodeId: string) => void
   onBack: () => void
   canGoBack: boolean
+  useRomanNumerals?: boolean
 }
 
-export function DecisionNode({ node, onSelect, onBack, canGoBack }: DecisionNodeProps) {
+export function DecisionNode({ node, onSelect, onBack, canGoBack, useRomanNumerals }: DecisionNodeProps) {
   return (
     <div className="flex flex-col gap-4">
       <div className="bg-white/5 border border-white/10 rounded-2xl p-5">
@@ -33,7 +36,7 @@ export function DecisionNode({ node, onSelect, onBack, canGoBack }: DecisionNode
             whileHover={{ scale: 1.01 }}
             whileTap={{ scale: 0.99 }}
           >
-            <span className="text-blue-300 font-bold mr-2">{String.fromCharCode(65 + i)}.</span>
+            <span className="text-blue-300 font-bold mr-2">{useRomanNumerals ? ROMAN[i] : String.fromCharCode(65 + i)}.</span>
             {opt.text}
           </motion.button>
         ))}
