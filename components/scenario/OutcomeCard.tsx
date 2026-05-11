@@ -41,9 +41,11 @@ const QUALITY_CONFIG: Record<
 interface OutcomeCardProps {
   node: DecisionNodeData
   onContinue: () => void
+  onBack: () => void
+  canGoBack: boolean
 }
 
-export function OutcomeCard({ node, onContinue }: OutcomeCardProps) {
+export function OutcomeCard({ node, onContinue, onBack, canGoBack }: OutcomeCardProps) {
   const cfg = QUALITY_CONFIG[node.quality ?? 'partial']
 
   return (
@@ -79,13 +81,23 @@ export function OutcomeCard({ node, onContinue }: OutcomeCardProps) {
         )}
       </div>
 
-      <button
-        onClick={onContinue}
-        className="mt-5 w-full py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-semibold text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300"
-        autoFocus
-      >
-        Continue to Final Result &rarr;
-      </button>
+      <div className="mt-5 flex items-center gap-3">
+        {canGoBack && (
+          <button
+            onClick={onBack}
+            className="px-4 py-3 text-blue-400/70 hover:text-blue-300 border border-blue-700/30 hover:border-blue-500/50 rounded-xl text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
+          >
+            ← Back
+          </button>
+        )}
+        <button
+          onClick={onContinue}
+          className="flex-1 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-semibold text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300"
+          autoFocus
+        >
+          Continue to Final Result &rarr;
+        </button>
+      </div>
     </motion.div>
   )
 }

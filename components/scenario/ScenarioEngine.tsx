@@ -65,14 +65,6 @@ export function ScenarioEngine({
         </div>
       </div>
 
-      {/* Tension badge */}
-      <div className="bg-amber-900/15 border border-amber-500/20 rounded-xl px-4 py-3">
-        <span className="text-amber-400/70 text-xs uppercase font-semibold tracking-wide block mb-0.5">
-          Legal Tension
-        </span>
-        <p className="text-amber-100/70 text-xs leading-relaxed">{sublevel.tension}</p>
-      </div>
-
       {/* Legal Context accordion */}
       <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
         <button
@@ -129,11 +121,15 @@ export function ScenarioEngine({
               path={breadcrumb}
               onNext={onComplete}
               isLast={sublevelIndex === totalSublevels - 1}
+              allOutcomes={Object.values(sublevel.nodes).filter((n) => n.type === 'outcome')}
+              chosenOutcomeId={breadcrumb.find((id) => sublevel.nodes[id]?.type === 'outcome') ?? ''}
             />
           ) : currentNode?.type === 'outcome' ? (
             <OutcomeCard
               node={currentNode}
               onContinue={() => navigate('final')}
+              onBack={goBack}
+              canGoBack={breadcrumb.length > 1}
             />
           ) : (
             <DecisionNode
