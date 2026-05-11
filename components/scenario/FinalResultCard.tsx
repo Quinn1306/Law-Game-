@@ -3,6 +3,10 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import type { FinalResult, DecisionNodeData, OutcomeQuality } from '@/data/phase2-scenario'
 
+function formatPath(optionIds: string[]): string {
+  return optionIds.map((id) => id.split('-').pop() ?? id).join(' → ')
+}
+
 const QUALITY_CONFIG: Record<
   OutcomeQuality,
   { border: string; bg: string; badge: string; icon: string }
@@ -46,6 +50,8 @@ interface FinalResultCardProps {
   isLast: boolean
   allOutcomes: DecisionNodeData[]
   chosenOutcomeId: string
+  tension?: string
+  outcomePaths?: Record<string, string[]>
 }
 
 export function FinalResultCard({
@@ -55,6 +61,8 @@ export function FinalResultCard({
   isLast,
   allOutcomes,
   chosenOutcomeId,
+  tension,
+  outcomePaths,
 }: FinalResultCardProps) {
   const [expandedId, setExpandedId] = useState<string | null>(chosenOutcomeId)
 
@@ -120,24 +128,24 @@ export function FinalResultCard({
                   aria-expanded={isExpanded}
                 >
                   <span className="text-sm shrink-0" aria-hidden="true">{cfg.icon}</span>
-                  <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${cfg.badge}`}>
-                    {outcome.qualityLabel}
-                  </span>
+                  <div className="flex flex-col min-w-0 flex-1">
+                    <span className={`text-xs font-semibold px-2 py-0.5 rounded-full w-fit ${cfg.badge}`}>
+                      {outcome.qualityLabel}
+                    </span>
+                    {outcomePaths?.[outcome.id] && (
+                      <span className="text-white/40 text-xs mt-1 pl-0.5">
+                        Decision path: {formatPath(outcomePaths[outcome.id])}
+                      </span>
+                    )}
+                  </div>
                   {isChosen && (
-                    <span className="text-xs font-bold text-white bg-blue-600/60 border border-blue-400/30 px-2 py-0.5 rounded-full ml-auto shrink-0">
+                    <span className="text-xs font-bold text-white bg-blue-600/60 border border-blue-400/30 px-2 py-0.5 rounded-full shrink-0">
                       Your Path
                     </span>
                   )}
-                  {!isChosen && (
-                    <span className="text-white/20 text-xs ml-auto shrink-0">
-                      {isExpanded ? '▲' : '▼'}
-                    </span>
-                  )}
-                  {isChosen && (
-                    <span className="text-white/20 text-xs shrink-0 ml-1">
-                      {isExpanded ? '▲' : '▼'}
-                    </span>
-                  )}
+                  <span className="text-white/20 text-xs shrink-0">
+                    {isExpanded ? '▲' : '▼'}
+                  </span>
                 </button>
 
                 <AnimatePresence initial={false}>
@@ -170,6 +178,15 @@ export function FinalResultCard({
               </div>
             )
           })}
+        </div>
+      )}
+
+      {tension && (
+        <div className="bg-blue-950/60 border border-blue-400/20 rounded-xl p-4">
+          <h3 className="text-blue-300 font-semibold uppercase text-xs mb-2 flex items-center gap-1.5">
+            <span aria-hidden="true">⟳</span> Legal Tension
+          </h3>
+          <p className="text-white/70 leading-relaxed text-sm">{tension}</p>
         </div>
       )}
 

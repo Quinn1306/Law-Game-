@@ -5,7 +5,29 @@ import { useGameStore } from '@/store/gameStore'
 import { DecisionNode } from './DecisionNode'
 import { OutcomeCard } from './OutcomeCard'
 import { FinalResultCard } from './FinalResultCard'
-import type { Sublevel } from '@/data/phase2-scenario'
+import type { Sublevel, DecisionNodeData } from '@/data/phase2-scenario'
+
+function computeOutcomePaths(
+  nodes: Record<string, DecisionNodeData>,
+  entryNode: string,
+): Record<string, string[]> {
+  const paths: Record<string, string[]> = {}
+
+  function dfs(nodeId: string, optionPath: string[]) {
+    const node = nodes[nodeId]
+    if (!node) return
+    if (node.type === 'outcome') {
+      paths[nodeId] = optionPath
+      return
+    }
+    for (const option of node.options ?? []) {
+      dfs(option.nextNode, [...optionPath, option.id])
+    }
+  }
+
+  dfs(entryNode, [])
+  return paths
+}
 
 interface ScenarioEngineProps {
   sublevel: Sublevel
@@ -60,8 +82,8 @@ export function ScenarioEngine({
           <h2 className="text-white font-bold text-base sm:text-lg mt-0.5 leading-snug">{sublevel.title}</h2>
         </div>
         <div className="sm:text-right shrink-0">
-          <span className="text-blue-300/40 text-xs block">Your role</span>
-          <span className="text-blue-200 text-xs font-semibold">{sublevel.situationRole}</span>
+          <span className="text-blue-300/70 text-sm font-semibold block">Your Role</span>
+          <span className="text-blue-200 text-sm font-bold">{sublevel.situationRole}</span>
         </div>
       </div>
 
@@ -123,6 +145,8 @@ export function ScenarioEngine({
               isLast={sublevelIndex === totalSublevels - 1}
               allOutcomes={Object.values(sublevel.nodes).filter((n) => n.type === 'outcome')}
               chosenOutcomeId={breadcrumb.find((id) => sublevel.nodes[id]?.type === 'outcome') ?? ''}
+              tension={sublevel.tension}
+              outcomePaths={computeOutcomePaths(sublevel.nodes, sublevel.entryNode)}
             />
           ) : currentNode?.type === 'outcome' ? (
             <OutcomeCard
