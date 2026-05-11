@@ -75,7 +75,7 @@ export default function LandingPage() {
             <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-4">
               CSRD &amp; CSDDD
               <br />
-              <span className="text-blue-400">After Omnibus I</span>
+              <span className="text-blue-400">Post-Omnibus I</span>
             </h1>
             <p className="text-white/60 text-lg leading-relaxed max-w-xl mx-auto">
               Master the three structural tensions created by Directive (EU) 2026/470. Test your knowledge, then apply the law to EuroMed AG.

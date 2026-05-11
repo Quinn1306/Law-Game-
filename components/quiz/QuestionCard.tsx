@@ -70,9 +70,11 @@ export function QuestionCard({ question, questionNumber, total, onNext }: Questi
       transition={{ duration: 0.3 }}
     >
       {/* Top bar */}
-      <div className="flex items-center justify-between text-xs text-blue-300/70 font-medium uppercase tracking-wider">
-        <span>{SECTION_LABELS[question.section]}</span>
-        <span>
+      <div className="flex items-center justify-between">
+        <span className="text-base font-bold text-blue-300 uppercase tracking-wider">
+          {SECTION_LABELS[question.section]}
+        </span>
+        <span className="text-xs text-blue-300/70 font-medium uppercase tracking-wider">
           {questionNumber} / {total}
         </span>
       </div>
