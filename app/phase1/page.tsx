@@ -44,7 +44,7 @@ export default function Phase1Page() {
         </header>
 
         {/* Section indicator */}
-        <div className="flex items-center justify-center gap-2 py-3 px-4">
+        <div className="flex flex-wrap items-center justify-center gap-2 py-3 px-4">
           {['A', 'B'].map((s) => {
             const sectionStart = s === 'A' ? 0 : 6
             const sectionEnd = s === 'A' ? 5 : 12

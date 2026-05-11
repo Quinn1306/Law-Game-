@@ -52,14 +52,14 @@ export function ScenarioEngine({
   return (
     <div className="max-w-3xl mx-auto flex flex-col gap-4 w-full">
       {/* Sub-level header */}
-      <div className="flex items-center justify-between">
-        <div>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <div className="min-w-0">
           <span className="text-blue-300/50 text-xs uppercase tracking-wider">
             Sub-Level {sublevelIndex + 1} of {totalSublevels}
           </span>
-          <h2 className="text-white font-bold text-lg mt-0.5">{sublevel.title}</h2>
+          <h2 className="text-white font-bold text-base sm:text-lg mt-0.5 leading-snug">{sublevel.title}</h2>
         </div>
-        <div className="text-right">
+        <div className="sm:text-right shrink-0">
           <span className="text-blue-300/40 text-xs block">Your role</span>
           <span className="text-blue-200 text-xs font-semibold">{sublevel.situationRole}</span>
         </div>

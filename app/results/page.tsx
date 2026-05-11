@@ -82,7 +82,7 @@ export default function ResultsPage() {
                         {sl.title}
                       </div>
                       {path.length > 0 ? (
-                        <div className="text-white/50 text-xs font-mono leading-relaxed">
+                        <div className="text-white/50 text-xs font-mono leading-relaxed break-all">
                           {path.join(' → ')}
                         </div>
                       ) : (

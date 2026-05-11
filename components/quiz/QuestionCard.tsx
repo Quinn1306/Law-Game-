@@ -1,5 +1,5 @@
 'use client'
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useMemo } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { AnswerOption, type OptionStatus } from './AnswerOption'
 import { LinearTimer } from './LinearTimer'
@@ -23,6 +23,15 @@ export function QuestionCard({ question, questionNumber, total, onNext }: Questi
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [revealed, setRevealed] = useState(false)
   const { selectAnswer } = useGameStore()
+
+  const shuffledOptions = useMemo(() => {
+    const arr = [...question.options]
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1))
+      ;[arr[i], arr[j]] = [arr[j], arr[i]]
+    }
+    return arr
+  }, [question.id])
 
   const handleSelect = useCallback(
     (optionId: string, correct: boolean) => {
@@ -91,7 +100,7 @@ export function QuestionCard({ question, questionNumber, total, onNext }: Questi
           question.options.length === 2 ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1 sm:grid-cols-2'
         }`}
       >
-        {question.options.map((opt, i) => (
+        {shuffledOptions.map((opt, i) => (
           <AnswerOption
             key={opt.id}
             index={i}
@@ -136,7 +145,7 @@ export function QuestionCard({ question, questionNumber, total, onNext }: Questi
             </p>
             <button
               onClick={onNext}
-              className="mt-4 px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-semibold text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300"
+              className="mt-4 px-6 py-2.5 min-h-[44px] bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-semibold text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300"
               autoFocus
             >
               Next &rarr;

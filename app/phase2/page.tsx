@@ -65,7 +65,6 @@ export default function Phase2Page() {
                   <span className="text-blue-400/60 text-sm font-bold w-6 shrink-0 mt-0.5">{i + 1}</span>
                   <div>
                     <div className="text-white text-sm font-semibold">{sl.title}</div>
-                    <div className="text-white/40 text-xs mt-0.5 leading-relaxed">{sl.tension}</div>
                   </div>
                 </div>
               ))}

@@ -56,7 +56,7 @@ export default function LandingPage() {
             </div>
             <span className="text-white/60 text-sm">European Law Academy</span>
           </div>
-          <span className="text-blue-300/40 text-xs font-mono">
+          <span className="hidden sm:block text-blue-300/40 text-xs font-mono">
             Directive (EU) 2026/470 — Omnibus I
           </span>
         </header>
@@ -142,9 +142,9 @@ export default function LandingPage() {
         </section>
 
         {/* Footer */}
-        <footer className="border-t border-white/5 px-6 py-3 flex items-center justify-between text-white/20 text-xs">
+        <footer className="border-t border-white/5 px-6 py-3 flex flex-wrap items-center justify-between gap-y-1 text-white/20 text-xs">
           <span>ERA EU Sustainability Law Training Tool</span>
-          <span>Directive (EU) 2026/470 · Omnibus I · 18 March 2026</span>
+          <span className="hidden sm:block">Directive (EU) 2026/470 · Omnibus I · 18 March 2026</span>
         </footer>
       </div>
     </main>
