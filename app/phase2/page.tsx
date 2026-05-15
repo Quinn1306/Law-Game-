@@ -2,14 +2,13 @@
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { motion } from 'motion/react'
-import { AnimatedBackground } from '@/components/ui/AnimatedBackground'
 import { ScenarioEngine } from '@/components/scenario/ScenarioEngine'
 import { useGameStore } from '@/store/gameStore'
 import scenario from '@/data/phase2-scenario'
 
 export default function Phase2Page() {
   const router = useRouter()
-  const { score } = useGameStore()
+  const { score, userName } = useGameStore()
   const [currentIndex, setCurrentIndex] = useState(0)
   const [started, setStarted] = useState(false)
 
@@ -23,21 +22,36 @@ export default function Phase2Page() {
 
   if (!started) {
     return (
-      <main className="relative min-h-screen flex flex-col overflow-hidden">
-        <AnimatedBackground />
-        <div className="relative z-10 flex flex-col min-h-screen items-center justify-center px-4 py-12">
+      <main className="min-h-screen min-h-dvh flex flex-col bg-slate-50">
+        <header className="bg-white border-b border-slate-200 px-5 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-2.5">
+            <div className="flex items-center justify-center w-7 h-7 rounded bg-blue-700 text-white font-bold text-xs tracking-tight">
+              ERA
+            </div>
+            <span className="text-slate-500 text-xs font-semibold uppercase tracking-wider">
+              Phase 2 — Scenario Module
+            </span>
+          </div>
+          {userName && <span className="text-slate-400 text-xs hidden sm:block">{userName}</span>}
+        </header>
+
+        <div className="flex-1 flex items-center justify-center px-4 py-12">
           <motion.div
-            className="max-w-xl w-full text-center"
-            initial={{ opacity: 0, y: 30 }}
+            className="max-w-lg w-full"
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
           >
-            {/* Phase 1 summary */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-5 mb-8">
-              <div className="text-white/40 text-xs uppercase tracking-wider mb-1">Phase 1 Result</div>
-              <div className="text-4xl font-bold text-white mb-1">
-                {score} <span className="text-white/30 text-2xl">/ 12</span>
+            {/* Phase 1 result */}
+            <div className="bg-white border border-slate-200 rounded-2xl p-6 mb-6 shadow-sm text-center">
+              <div className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-2">
+                Phase 1 Result
               </div>
-              <div className="text-blue-300/60 text-sm">
+              <div className="text-5xl font-bold text-slate-900 mb-1">
+                {score}
+                <span className="text-slate-300 text-3xl"> / 12</span>
+              </div>
+              <div className="text-blue-700 text-sm font-medium">
                 {score >= 10
                   ? 'Excellent — strong foundation for Phase 2'
                   : score >= 7
@@ -46,25 +60,23 @@ export default function Phase2Page() {
               </div>
             </div>
 
-            <div className="inline-block bg-blue-500/15 border border-blue-400/20 text-blue-300 text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-5">
+            <span className="inline-block text-xs font-semibold uppercase tracking-widest text-blue-700 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full mb-4">
               Phase 2
-            </div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">
-              Scenario Module
-            </h1>
-            <p className="text-white/60 leading-relaxed mb-6">
-              Apply post-Omnibus law to EuroMed AG — a German manufacturer with 1,200 employees and EUR 500m turnover. Three sub-levels. Three structural tensions. No time pressure. No right or wrong path.
+            </span>
+            <h1 className="text-3xl font-bold text-slate-900 mb-3">Scenario Module</h1>
+            <p className="text-slate-500 text-sm leading-relaxed mb-6">
+              Apply post-Omnibus law to EuroMed AG — a German manufacturer with 1,200 employees and EUR 500m turnover. Three sub-levels. Three structural tensions. No time pressure.
             </p>
 
-            <div className="flex flex-col gap-3 mb-8 text-left">
+            <div className="space-y-2 mb-8">
               {scenario.map((sl, i) => (
                 <div
                   key={sl.id}
-                  className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 flex items-start gap-3"
+                  className="bg-white border border-slate-200 rounded-xl px-4 py-3 flex items-center gap-3 shadow-sm"
                 >
-                  <span className="text-blue-400/60 text-sm font-bold w-6 shrink-0 mt-0.5">{i + 1}</span>
+                  <span className="text-xs font-bold text-blue-700 w-5 shrink-0">{i + 1}</span>
                   <div>
-                    <div className="text-white text-sm font-semibold">{sl.title}</div>
+                    <div className="text-slate-800 text-sm font-semibold">{sl.title}</div>
                   </div>
                 </div>
               ))}
@@ -72,9 +84,9 @@ export default function Phase2Page() {
 
             <button
               onClick={() => setStarted(true)}
-              className="px-10 py-4 bg-blue-600 hover:bg-blue-500 text-white text-lg font-bold rounded-2xl transition-all hover:scale-105 active:scale-95 shadow-lg shadow-blue-900/40"
+              className="w-full py-3.5 bg-blue-700 hover:bg-blue-800 active:bg-blue-900 text-white font-semibold rounded-xl transition-colors focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2 shadow-sm"
             >
-              Begin Sub-Level 1 &rarr;
+              Begin Sub-Level 1
             </button>
           </motion.div>
         </div>
@@ -83,45 +95,45 @@ export default function Phase2Page() {
   }
 
   return (
-    <main className="relative min-h-screen flex flex-col overflow-hidden">
-      <AnimatedBackground />
-      <div className="relative z-10 flex flex-col min-h-screen">
-        {/* Top bar */}
-        <header className="flex items-center justify-between px-5 py-3 border-b border-white/5 bg-black/20 backdrop-blur-sm">
-          <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-md bg-blue-600 flex items-center justify-center text-white font-bold text-xs">
-              ERA
-            </div>
-            <span className="text-blue-300/60 text-xs font-semibold uppercase tracking-wider">
-              Phase 2 — Scenario Module
-            </span>
+    <main className="min-h-screen min-h-dvh flex flex-col bg-slate-50">
+      {/* Header */}
+      <header className="bg-white border-b border-slate-200 px-5 py-3 flex items-center justify-between sticky top-0 z-20">
+        <div className="flex items-center gap-2.5">
+          <div className="flex items-center justify-center w-7 h-7 rounded bg-blue-700 text-white font-bold text-xs tracking-tight">
+            ERA
           </div>
-          <div className="flex items-center gap-2">
-            {scenario.map((_, i) => (
-              <div
-                key={i}
-                className={`w-2 h-2 rounded-full transition-colors ${
-                  i < currentIndex
-                    ? 'bg-emerald-400'
-                    : i === currentIndex
-                    ? 'bg-blue-400'
-                    : 'bg-white/15'
-                }`}
-                aria-hidden="true"
-              />
-            ))}
-          </div>
-        </header>
-
-        <div className="flex-1 flex items-start justify-center p-4 sm:p-6">
-          <ScenarioEngine
-            key={scenario[currentIndex].id}
-            sublevel={scenario[currentIndex]}
-            sublevelIndex={currentIndex}
-            totalSublevels={scenario.length}
-            onComplete={handleComplete}
-          />
+          <span className="text-slate-500 text-xs font-semibold uppercase tracking-wider">
+            Phase 2 — Scenario Module
+          </span>
         </div>
+        <div className="flex items-center gap-2">
+          {scenario.map((_, i) => (
+            <div
+              key={i}
+              className={`w-2 h-2 rounded-full transition-colors ${
+                i < currentIndex
+                  ? 'bg-green-500'
+                  : i === currentIndex
+                  ? 'bg-blue-700'
+                  : 'bg-slate-200'
+              }`}
+              aria-hidden="true"
+            />
+          ))}
+          {userName && (
+            <span className="text-slate-400 text-xs hidden sm:block ml-2">{userName}</span>
+          )}
+        </div>
+      </header>
+
+      <div className="flex-1 p-4 sm:p-6">
+        <ScenarioEngine
+          key={scenario[currentIndex].id}
+          sublevel={scenario[currentIndex]}
+          sublevelIndex={currentIndex}
+          totalSublevels={scenario.length}
+          onComplete={handleComplete}
+        />
       </div>
     </main>
   )

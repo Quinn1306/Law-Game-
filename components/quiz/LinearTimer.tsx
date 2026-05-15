@@ -8,9 +8,9 @@ interface LinearTimerProps {
 }
 
 function barColor(fraction: number): string {
-  if (fraction > 0.33) return 'from-blue-400 to-cyan-400'
-  if (fraction > 0.15) return 'from-amber-400 to-orange-400'
-  return 'from-red-500 to-rose-400'
+  if (fraction > 0.33) return 'bg-blue-600'
+  if (fraction > 0.15) return 'bg-amber-500'
+  return 'bg-red-600'
 }
 
 export function LinearTimer({ timeLimit, paused, onExpire }: LinearTimerProps) {
@@ -39,14 +39,16 @@ export function LinearTimer({ timeLimit, paused, onExpire }: LinearTimerProps) {
 
   return (
     <div className="w-full flex items-center gap-3">
-      <div className="flex-1 h-2 bg-white/10 rounded-full overflow-hidden">
+      <div className="flex-1 h-1.5 bg-slate-200 rounded-full overflow-hidden">
         <div
-          className={`h-full bg-gradient-to-r ${barColor(fraction)} rounded-full transition-all duration-1000 linear`}
+          className={`h-full ${barColor(fraction)} rounded-full transition-all duration-1000 ease-linear`}
           style={{ width: `${fraction * 100}%` }}
         />
       </div>
       <span
-        className="text-white/60 text-xs font-mono w-6 text-right tabular-nums"
+        className={`text-xs font-mono w-5 text-right tabular-nums font-semibold ${
+          fraction <= 0.15 ? 'text-red-600' : fraction <= 0.33 ? 'text-amber-600' : 'text-slate-500'
+        }`}
         role="timer"
         aria-live="off"
         aria-label={`${timeLeft} seconds remaining`}

@@ -63,7 +63,7 @@ export function QuestionCard({ question, questionNumber, total, onNext }: Questi
 
   return (
     <motion.div
-      className="flex flex-col gap-5 w-full max-w-3xl mx-auto"
+      className="flex flex-col gap-4 w-full max-w-3xl mx-auto"
       initial={{ opacity: 0, x: 40 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -40 }}
@@ -71,10 +71,10 @@ export function QuestionCard({ question, questionNumber, total, onNext }: Questi
     >
       {/* Top bar */}
       <div className="flex items-center justify-between">
-        <span className="text-base font-bold text-blue-300 uppercase tracking-wider">
+        <span className="text-xs font-semibold uppercase tracking-widest text-blue-700">
           {SECTION_LABELS[question.section]}
         </span>
-        <span className="text-xs text-blue-300/70 font-medium uppercase tracking-wider">
+        <span className="text-xs text-slate-400 font-medium">
           {questionNumber} / {total}
         </span>
       </div>
@@ -90,18 +90,14 @@ export function QuestionCard({ question, questionNumber, total, onNext }: Questi
       />
 
       {/* Question */}
-      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 sm:p-6">
-        <h2 className="text-white text-lg sm:text-xl font-semibold leading-snug">
+      <div className="bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+        <h2 className="text-slate-900 text-base sm:text-lg font-semibold leading-snug">
           {question.question}
         </h2>
       </div>
 
       {/* Answer grid */}
-      <div
-        className={`grid gap-3 ${
-          question.options.length === 2 ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1 sm:grid-cols-2'
-        }`}
-      >
+      <div className="grid gap-2.5 grid-cols-1 sm:grid-cols-2">
         {shuffledOptions.map((opt, i) => (
           <AnswerOption
             key={opt.id}
@@ -118,39 +114,36 @@ export function QuestionCard({ question, questionNumber, total, onNext }: Questi
       <AnimatePresence>
         {revealed && (
           <motion.div
-            className={`rounded-2xl border p-5 ${
+            className={`rounded-2xl border p-5 shadow-sm ${
               isCorrect
-                ? 'bg-emerald-900/30 border-emerald-500/40'
-                : 'bg-slate-800/60 border-white/10'
+                ? 'bg-green-50 border-green-300'
+                : 'bg-white border-slate-200'
             }`}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.35 }}
+            transition={{ duration: 0.3 }}
           >
             <div className="flex items-center gap-2 mb-3">
-              <span className="text-xl" aria-hidden="true">
-                {isCorrect ? '✓' : '✗'}
-              </span>
               <span
-                className={`font-bold text-sm uppercase tracking-wide ${
-                  isCorrect ? 'text-emerald-300' : 'text-rose-300'
+                className={`text-sm font-bold uppercase tracking-wide ${
+                  isCorrect ? 'text-green-700' : 'text-red-600'
                 }`}
               >
                 {isCorrect ? 'Correct' : selectedId === '__expired__' ? 'Time expired' : 'Incorrect'}
               </span>
             </div>
-            <p className="text-white/80 text-sm leading-relaxed mb-3">
+            <p className="text-slate-700 text-sm leading-relaxed mb-3">
               {question.explanation}
             </p>
-            <p className="text-blue-300/50 text-xs font-mono border-t border-white/10 pt-3">
+            <p className="text-slate-400 text-xs font-mono border-t border-slate-200 pt-3 leading-relaxed">
               {question.legalBasis}
             </p>
             <button
               onClick={onNext}
-              className="mt-4 px-6 py-2.5 min-h-[44px] bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-semibold text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300"
+              className="mt-4 px-6 py-2.5 min-h-[44px] bg-blue-700 hover:bg-blue-800 active:bg-blue-900 text-white rounded-xl font-semibold text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2"
               autoFocus
             >
-              Next &rarr;
+              Next
             </button>
           </motion.div>
         )}

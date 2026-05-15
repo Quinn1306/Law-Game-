@@ -14,29 +14,31 @@ interface DecisionNodeProps {
 
 export function DecisionNode({ node, onSelect, onBack, canGoBack, useRomanNumerals }: DecisionNodeProps) {
   return (
-    <div className="flex flex-col gap-4">
-      <div className="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <span className="text-blue-300/60 text-xs uppercase tracking-widest font-semibold block mb-2">
+    <div className="flex flex-col gap-3">
+      <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+        <span className="text-xs font-semibold uppercase tracking-widest text-slate-400 block mb-2">
           {node.label}
         </span>
-        <p className="text-white text-base sm:text-lg font-medium leading-snug">
+        <p className="text-slate-900 text-base sm:text-lg font-semibold leading-snug">
           {node.question}
         </p>
       </div>
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-2.5">
         {node.options?.map((opt, i) => (
           <motion.button
             key={opt.id}
-            className="w-full text-left p-4 rounded-xl bg-blue-900/40 hover:bg-blue-800/60 border border-blue-700/30 hover:border-blue-500/50 text-white text-sm leading-snug transition-all focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full text-left p-4 rounded-xl bg-white border border-slate-200 hover:border-blue-400 hover:bg-blue-50 text-slate-800 text-sm leading-snug transition-all focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-1 shadow-sm group"
             onClick={() => onSelect(opt.nextNode)}
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 16 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: i * 0.07, duration: 0.25 }}
-            whileHover={{ scale: 1.01 }}
+            transition={{ delay: i * 0.06, duration: 0.22 }}
+            whileHover={{ y: -1 }}
             whileTap={{ scale: 0.99 }}
           >
-            <span className="text-blue-300 font-bold mr-2">{useRomanNumerals ? ROMAN[i] : String.fromCharCode(65 + i)}.</span>
+            <span className="text-blue-700 font-bold mr-2 group-hover:text-blue-800">
+              {useRomanNumerals ? ROMAN[i] : String.fromCharCode(65 + i)}.
+            </span>
             {opt.text}
           </motion.button>
         ))}
@@ -45,9 +47,9 @@ export function DecisionNode({ node, onSelect, onBack, canGoBack, useRomanNumera
       {canGoBack && (
         <button
           onClick={onBack}
-          className="self-start text-blue-400/60 hover:text-blue-300 text-xs flex items-center gap-1 transition-colors mt-1"
+          className="self-start text-slate-500 hover:text-slate-800 text-xs font-medium flex items-center gap-1 transition-colors mt-1 min-h-[44px] px-1"
         >
-          ← Back
+          Back
         </button>
       )}
     </div>

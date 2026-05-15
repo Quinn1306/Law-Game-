@@ -5,6 +5,7 @@ export type AnswerState = 'unanswered' | 'correct' | 'incorrect'
 
 interface GameStore {
   phase: GamePhase
+  userName: string
   currentQuestion: number
   score: number
   answers: Record<string, string>
@@ -13,6 +14,7 @@ interface GameStore {
   currentSublevel: number
 
   setPhase: (phase: GamePhase) => void
+  setUserName: (name: string) => void
   selectAnswer: (questionId: string, optionId: string, correct: boolean) => void
   nextQuestion: () => void
   setAnswerState: (state: AnswerState) => void
@@ -23,6 +25,7 @@ interface GameStore {
 
 export const useGameStore = create<GameStore>((set) => ({
   phase: 'intro',
+  userName: '',
   currentQuestion: 0,
   score: 0,
   answers: {},
@@ -31,6 +34,8 @@ export const useGameStore = create<GameStore>((set) => ({
   currentSublevel: 0,
 
   setPhase: (phase) => set({ phase }),
+
+  setUserName: (userName) => set({ userName }),
 
   selectAnswer: (questionId, optionId, correct) =>
     set((state) => ({
@@ -58,13 +63,14 @@ export const useGameStore = create<GameStore>((set) => ({
   setSublevel: (index) => set({ currentSublevel: index }),
 
   reset: () =>
-    set({
+    set((state) => ({
       phase: 'intro',
+      userName: state.userName,
       currentQuestion: 0,
       score: 0,
       answers: {},
       answerState: 'unanswered',
       scenarioPaths: {},
       currentSublevel: 0,
-    }),
+    })),
 }))
