@@ -27,16 +27,12 @@ html {
   text-size-adjust: 100%;
 }
 
-@keyframes organic-bg {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
 body {
-  background: linear-gradient(135deg, #dbeafe, #eff6ff, #bfdbfe, #e0f2fe, #dbeafe);
-  background-size: 400% 400%;
-  animation: organic-bg 18s ease infinite;
+  background:
+    radial-gradient(ellipse at 20% 30%, #1e3a5f 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 70%, #0f2744 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 10%, #1a3a6b 0%, transparent 45%),
+    linear-gradient(160deg, #0d1f3c 0%, #112244 40%, #0a1a35 100%);
   color: var(--text-primary);
   font-family: var(--font-inter, 'Inter', system-ui, -apple-system, sans-serif);
   -webkit-font-smoothing: antialiased;
