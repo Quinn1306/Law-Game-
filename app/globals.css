@@ -28,11 +28,7 @@ html {
 }
 
 body {
-  background:
-    radial-gradient(ellipse at 20% 30%, #1e3a5f 0%, transparent 55%),
-    radial-gradient(ellipse at 80% 70%, #0f2744 0%, transparent 50%),
-    radial-gradient(ellipse at 60% 10%, #1a3a6b 0%, transparent 45%),
-    linear-gradient(160deg, #0d1f3c 0%, #112244 40%, #0a1a35 100%);
+  background: #040d1c;
   color: var(--text-primary);
   font-family: var(--font-inter, 'Inter', system-ui, -apple-system, sans-serif);
   -webkit-font-smoothing: antialiased;

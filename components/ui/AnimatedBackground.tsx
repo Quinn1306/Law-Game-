@@ -1,18 +1,6 @@
 'use client'
 import { useEffect, useRef } from 'react'
 
-interface Orb {
-  bx: number
-  by: number
-  r: number
-  rgb: [number, number, number]
-  a: number
-  speed: number
-  phase: number
-  driftX: number
-  driftY: number
-}
-
 export function AnimatedBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
@@ -22,52 +10,63 @@ export function AnimatedBackground() {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    let animId: number
-    let t = 0
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
 
-    const resize = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-    }
-    resize()
-    window.addEventListener('resize', resize)
+    const w = canvas.width
+    const h = canvas.height
 
-    const orbs: Orb[] = [
-      { bx: 0.12, by: 0.18, r: 0.30, rgb: [59,  130, 246], a: 0.10, speed: 0.00030, phase: 0.0, driftX: 0.08, driftY: 0.06 },
-      { bx: 0.78, by: 0.12, r: 0.35, rgb: [29,   78, 216], a: 0.08, speed: 0.00022, phase: 2.0, driftX: 0.07, driftY: 0.09 },
-      { bx: 0.88, by: 0.72, r: 0.28, rgb: [96,  165, 250], a: 0.09, speed: 0.00038, phase: 4.1, driftX: 0.06, driftY: 0.07 },
-      { bx: 0.35, by: 0.88, r: 0.32, rgb: [37,   99, 235], a: 0.07, speed: 0.00028, phase: 1.2, driftX: 0.09, driftY: 0.05 },
-      { bx: 0.05, by: 0.62, r: 0.22, rgb: [147, 197, 253], a: 0.08, speed: 0.00042, phase: 3.5, driftX: 0.05, driftY: 0.08 },
-      { bx: 0.55, by: 0.45, r: 0.18, rgb: [79,  140, 255], a: 0.05, speed: 0.00018, phase: 5.8, driftX: 0.10, driftY: 0.07 },
+    // Dark navy base
+    ctx.fillStyle = '#040d1c'
+    ctx.fillRect(0, 0, w, h)
+
+    // Nebula cloud layers
+    const clouds = [
+      { x: 0.50, y: 1.05, r: 0.70, rgb: [20, 110, 210] as [number,number,number], a: 0.55 },
+      { x: 0.35, y: 0.75, r: 0.50, rgb: [15,  80, 185] as [number,number,number], a: 0.30 },
+      { x: 0.65, y: 0.55, r: 0.42, rgb: [10,  60, 160] as [number,number,number], a: 0.22 },
+      { x: 0.20, y: 0.35, r: 0.38, rgb: [12,  55, 145] as [number,number,number], a: 0.18 },
+      { x: 0.80, y: 0.30, r: 0.33, rgb: [18,  75, 170] as [number,number,number], a: 0.16 },
+      { x: 0.50, y: 0.45, r: 0.55, rgb: [15,  85, 190] as [number,number,number], a: 0.12 },
+      { x: 0.10, y: 0.60, r: 0.30, rgb: [10,  50, 140] as [number,number,number], a: 0.14 },
     ]
 
-    const draw = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
-      t++
-
-      for (const orb of orbs) {
-        const cx = (orb.bx + Math.sin(t * orb.speed + orb.phase) * orb.driftX) * canvas.width
-        const cy = (orb.by + Math.cos(t * orb.speed * 0.73 + orb.phase + 1.1) * orb.driftY) * canvas.height
-        const r  = orb.r * Math.min(canvas.width, canvas.height)
-
-        const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, r)
-        grad.addColorStop(0,   `rgba(${orb.rgb[0]}, ${orb.rgb[1]}, ${orb.rgb[2]}, ${orb.a})`)
-        grad.addColorStop(0.5, `rgba(${orb.rgb[0]}, ${orb.rgb[1]}, ${orb.rgb[2]}, ${orb.a * 0.4})`)
-        grad.addColorStop(1,   `rgba(${orb.rgb[0]}, ${orb.rgb[1]}, ${orb.rgb[2]}, 0)`)
-
-        ctx.beginPath()
-        ctx.arc(cx, cy, r, 0, Math.PI * 2)
-        ctx.fillStyle = grad
-        ctx.fill()
-      }
-
-      animId = requestAnimationFrame(draw)
+    for (const c of clouds) {
+      const cx = c.x * w
+      const cy = c.y * h
+      const r  = c.r * Math.min(w, h)
+      const g  = ctx.createRadialGradient(cx, cy, 0, cx, cy, r)
+      g.addColorStop(0,   `rgba(${c.rgb[0]},${c.rgb[1]},${c.rgb[2]},${c.a})`)
+      g.addColorStop(0.45,`rgba(${c.rgb[0]},${c.rgb[1]},${c.rgb[2]},${(c.a * 0.3).toFixed(3)})`)
+      g.addColorStop(1,   `rgba(${c.rgb[0]},${c.rgb[1]},${c.rgb[2]},0)`)
+      ctx.beginPath()
+      ctx.arc(cx, cy, r, 0, Math.PI * 2)
+      ctx.fillStyle = g
+      ctx.fill()
     }
-    draw()
 
-    return () => {
-      cancelAnimationFrame(animId)
-      window.removeEventListener('resize', resize)
+    // Stars using a deterministic LCG so they look the same every render
+    let seed = 31415
+    const rng = () => {
+      seed = (seed * 1664525 + 1013904223) & 0x7fffffff
+      return seed / 0x7fffffff
+    }
+
+    const starCount = Math.round((w * h) / 7000)
+    for (let i = 0; i < starCount; i++) {
+      const x    = rng() * w
+      // bias toward upper 75% of screen where stars show best
+      const y    = rng() < 0.78 ? rng() * h * 0.78 : rng() * h
+      const r    = rng() * 1.1 + 0.25
+      const a    = rng() * 0.55 + 0.30
+      const cyan = rng() > 0.6
+
+      ctx.beginPath()
+      ctx.arc(x, y, r, 0, Math.PI * 2)
+      ctx.fillStyle = cyan
+        ? `rgba(160, 220, 255, ${a})`
+        : `rgba(200, 225, 255, ${a})`
+      ctx.fill()
     }
   }, [])
 
