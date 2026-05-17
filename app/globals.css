@@ -25,10 +25,11 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  background: #040d1c;
 }
 
 body {
-  background: #040d1c;
+  background: transparent;
   color: var(--text-primary);
   font-family: var(--font-inter, 'Inter', system-ui, -apple-system, sans-serif);
   -webkit-font-smoothing: antialiased;
