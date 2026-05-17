@@ -25,7 +25,9 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  background: #040d1c;
+  background: linear-gradient(160deg, #051b52 0%, #0c2f8a 35%, #1a4db5 65%, #2060d8 100%);
+  background-attachment: fixed;
+  min-height: 100%;
 }
 
 body {
@@ -55,12 +57,12 @@ textarea {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: rgba(255, 255, 255, 0.08);
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: rgba(255, 255, 255, 0.25);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: rgba(255, 255, 255, 0.40);
 }

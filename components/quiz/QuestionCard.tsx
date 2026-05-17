@@ -90,7 +90,7 @@ export function QuestionCard({ question, questionNumber, total, onNext }: Questi
       />
 
       {/* Question */}
-      <div className="bg-white border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+      <div className="bg-white border border-slate-100 rounded-2xl p-5 sm:p-6 shadow-xl">
         <h2 className="text-slate-900 text-base sm:text-lg font-semibold leading-snug">
           {question.question}
         </h2>
@@ -114,10 +114,10 @@ export function QuestionCard({ question, questionNumber, total, onNext }: Questi
       <AnimatePresence>
         {revealed && (
           <motion.div
-            className={`rounded-2xl border p-5 shadow-sm ${
+            className={`rounded-2xl border p-5 shadow-xl ${
               isCorrect
                 ? 'bg-green-50 border-green-300'
-                : 'bg-white border-slate-200'
+                : 'bg-white border-slate-100'
             }`}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}

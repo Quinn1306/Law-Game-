@@ -31,7 +31,7 @@ export default function ResultsPage() {
 
   return (
     <main className="min-h-screen min-h-dvh flex flex-col bg-transparent">
-      <header className="bg-white border-b border-slate-200 px-5 py-3 flex items-center justify-between sticky top-0 z-20">
+      <header className="bg-white border-b border-slate-100 shadow-md px-5 py-3 flex items-center justify-between sticky top-0 z-20">
         <div className="flex items-center gap-2.5">
           <div className="flex items-center justify-center w-7 h-7 rounded bg-blue-700 text-white font-bold text-xs tracking-tight">
             ERA
@@ -72,7 +72,7 @@ export default function ResultsPage() {
 
           {/* Decision paths */}
           <motion.div
-            className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm"
+            className="bg-white border border-slate-100 rounded-2xl p-5 shadow-xl"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.12 }}
@@ -102,7 +102,7 @@ export default function ResultsPage() {
           {/* Review wrong answers */}
           {wrongAnswers.length > 0 && (
             <motion.div
-              className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm"
+              className="bg-white border border-slate-100 rounded-2xl p-5 shadow-xl"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.22 }}

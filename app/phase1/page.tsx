@@ -22,7 +22,7 @@ export default function Phase1Page() {
   return (
     <main className="min-h-screen min-h-dvh flex flex-col bg-transparent">
       {/* Header */}
-      <header className="bg-white border-b border-slate-200 px-5 py-3 flex items-center justify-between sticky top-0 z-20">
+      <header className="bg-white border-b border-slate-100 shadow-md px-5 py-3 flex items-center justify-between sticky top-0 z-20">
         <div className="flex items-center gap-2.5">
           <div className="flex items-center justify-center w-7 h-7 rounded bg-blue-700 text-white font-bold text-xs tracking-tight">
             ERA
@@ -45,7 +45,7 @@ export default function Phase1Page() {
       </header>
 
       {/* Section tabs */}
-      <div className="bg-white border-b border-slate-200 px-4">
+      <div className="bg-white border-b border-slate-100 px-4">
         <div className="max-w-3xl mx-auto flex items-center gap-1 py-2">
           {['A', 'B'].map((s) => {
             const sectionStart = s === 'A' ? 0 : 6

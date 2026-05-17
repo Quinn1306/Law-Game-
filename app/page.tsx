@@ -74,7 +74,7 @@ export default function LandingPage() {
             transition={{ duration: 0.35 }}
           >
             {/* Header */}
-            <header className="bg-white border-b border-slate-200 px-6 py-4">
+            <header className="bg-white border-b border-slate-100 shadow-sm px-6 py-4">
               <div className="max-w-5xl mx-auto flex items-center gap-3">
                 <div className="flex items-center justify-center w-8 h-8 rounded bg-blue-700 text-white font-bold text-xs tracking-tight">
                   ERA
@@ -91,7 +91,7 @@ export default function LandingPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1, duration: 0.5 }}
               >
-                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-8">
+                <div className="bg-white border border-slate-100 rounded-2xl shadow-xl p-8">
                   <div className="mb-6">
                     <span className="inline-block text-xs font-semibold uppercase tracking-widest text-blue-700 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full mb-4">
                       EU Corporate Sustainability Law
@@ -149,7 +149,7 @@ export default function LandingPage() {
                   {TENSIONS.map((t, i) => (
                     <div
                       key={i}
-                      className="bg-white border border-slate-200 rounded-xl p-3 shadow-sm"
+                      className="bg-white border border-slate-100 rounded-xl p-3 shadow-lg"
                     >
                       <div className="text-xs font-semibold text-amber-700 mb-1">{t.label}</div>
                       <div className="text-xs text-slate-500 leading-relaxed">{t.desc}</div>
@@ -169,7 +169,7 @@ export default function LandingPage() {
             transition={{ duration: 0.35 }}
           >
             {/* Header */}
-            <header className="bg-white border-b border-slate-200 px-6 py-4">
+            <header className="bg-white border-b border-slate-100 shadow-sm px-6 py-4">
               <div className="max-w-5xl mx-auto flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="flex items-center justify-center w-8 h-8 rounded bg-blue-700 text-white font-bold text-xs tracking-tight">
@@ -220,7 +220,7 @@ export default function LandingPage() {
                 {PHASES.map((p) => (
                   <div
                     key={p.phase}
-                    className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm"
+                    className="bg-white border border-slate-100 rounded-2xl p-6 shadow-xl"
                   >
                     <div className="text-blue-700 text-3xl font-bold mb-3 font-mono opacity-20">{p.num}</div>
                     <div className="text-xs font-semibold uppercase tracking-widest text-blue-700 mb-1">{p.phase}</div>
@@ -243,7 +243,7 @@ export default function LandingPage() {
                   {TENSIONS.map((t, i) => (
                     <div
                       key={i}
-                      className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm border-l-4 border-l-amber-400"
+                      className="bg-white border border-slate-100 rounded-xl p-4 shadow-lg border-l-4 border-l-amber-400"
                     >
                       <div className="text-sm font-semibold text-slate-800 mb-1">{t.label}</div>
                       <div className="text-xs text-slate-500 leading-relaxed">{t.desc}</div>
@@ -270,7 +270,7 @@ export default function LandingPage() {
             </section>
 
             {/* Footer */}
-            <footer className="bg-white border-t border-slate-200 px-6 py-3">
+            <footer className="bg-white border-t border-slate-100 shadow-[0_-1px_4px_rgba(0,0,0,0.06)] px-6 py-3">
               <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-y-1 text-slate-400 text-xs">
                 <span>ERA EU Sustainability Law Training Tool</span>
                 <span className="hidden sm:block">Directive (EU) 2026/470 · Omnibus I · 18 March 2026</span>

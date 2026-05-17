@@ -24,15 +24,15 @@ export function AnswerOption({ index, text, status, onClick, disabled }: AnswerO
 
   const stateClass: Record<OptionStatus, string> = {
     default:
-      'bg-white border-slate-200 text-slate-800 hover:border-blue-400 hover:bg-blue-50 focus:ring-blue-700 shadow-sm',
+      'bg-white border-slate-200 text-slate-800 hover:border-blue-400 hover:bg-blue-50 focus:ring-blue-700 shadow-lg',
     'selected-correct':
-      'bg-green-50 border-green-500 text-green-900 focus:ring-green-600 shadow-sm',
+      'bg-green-50 border-green-500 text-green-900 focus:ring-green-600 shadow-lg',
     'selected-incorrect':
-      'bg-red-50 border-red-500 text-red-900 focus:ring-red-600 shadow-sm',
+      'bg-red-50 border-red-500 text-red-900 focus:ring-red-600 shadow-lg',
     'revealed-correct':
-      'bg-green-50 border-green-400 text-green-900 focus:ring-green-600 shadow-sm',
+      'bg-green-50 border-green-400 text-green-900 focus:ring-green-600 shadow-lg',
     disabled:
-      'bg-white border-slate-100 text-slate-400 cursor-not-allowed shadow-sm',
+      'bg-white border-slate-100 text-slate-400 cursor-not-allowed shadow-lg',
   }
 
   const labelClass: Record<OptionStatus, string> = {

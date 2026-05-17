@@ -23,7 +23,7 @@ export default function Phase2Page() {
   if (!started) {
     return (
       <main className="min-h-screen min-h-dvh flex flex-col bg-transparent">
-        <header className="bg-white border-b border-slate-200 px-5 py-3 flex items-center justify-between">
+        <header className="bg-white border-b border-slate-100 shadow-md px-5 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <div className="flex items-center justify-center w-7 h-7 rounded bg-blue-700 text-white font-bold text-xs tracking-tight">
               ERA
@@ -43,7 +43,7 @@ export default function Phase2Page() {
             transition={{ duration: 0.4 }}
           >
             {/* Phase 1 result */}
-            <div className="bg-white border border-slate-200 rounded-2xl p-6 mb-6 shadow-sm text-center">
+            <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-xl text-center">
               <div className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-2">
                 Phase 1 Result
               </div>
@@ -72,7 +72,7 @@ export default function Phase2Page() {
               {scenario.map((sl, i) => (
                 <div
                   key={sl.id}
-                  className="bg-white border border-slate-200 rounded-xl px-4 py-3 flex items-center gap-3 shadow-sm"
+                  className="bg-white border border-slate-100 rounded-xl px-4 py-3 flex items-center gap-3 shadow-lg"
                 >
                   <span className="text-xs font-bold text-blue-700 w-5 shrink-0">{i + 1}</span>
                   <div>
@@ -97,7 +97,7 @@ export default function Phase2Page() {
   return (
     <main className="min-h-screen min-h-dvh flex flex-col bg-transparent">
       {/* Header */}
-      <header className="bg-white border-b border-slate-200 px-5 py-3 flex items-center justify-between sticky top-0 z-20">
+      <header className="bg-white border-b border-slate-100 shadow-md px-5 py-3 flex items-center justify-between sticky top-0 z-20">
         <div className="flex items-center gap-2.5">
           <div className="flex items-center justify-center w-7 h-7 rounded bg-blue-700 text-white font-bold text-xs tracking-tight">
             ERA

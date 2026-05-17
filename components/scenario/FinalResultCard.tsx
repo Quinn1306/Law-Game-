@@ -70,7 +70,7 @@ export function FinalResultCard({
 
   return (
     <motion.div
-      className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-5"
+      className="bg-white border border-slate-100 rounded-2xl p-6 shadow-xl space-y-5"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35 }}

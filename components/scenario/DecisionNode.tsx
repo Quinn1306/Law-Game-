@@ -15,7 +15,7 @@ interface DecisionNodeProps {
 export function DecisionNode({ node, onSelect, onBack, canGoBack, useRomanNumerals }: DecisionNodeProps) {
   return (
     <div className="flex flex-col gap-3">
-      <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+      <div className="bg-white border border-slate-100 rounded-2xl p-5 shadow-xl">
         <span className="text-xs font-semibold uppercase tracking-widest text-slate-400 block mb-2">
           {node.label}
         </span>
@@ -28,7 +28,7 @@ export function DecisionNode({ node, onSelect, onBack, canGoBack, useRomanNumera
         {node.options?.map((opt, i) => (
           <motion.button
             key={opt.id}
-            className="w-full text-left p-4 rounded-xl bg-white border border-slate-200 hover:border-blue-400 hover:bg-blue-50 text-slate-800 text-sm leading-snug transition-all focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-1 shadow-sm group"
+            className="w-full text-left p-4 rounded-xl bg-white border border-slate-100 hover:border-blue-400 hover:bg-blue-50 text-slate-800 text-sm leading-snug transition-all focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-1 shadow-lg group"
             onClick={() => onSelect(opt.nextNode)}
             initial={{ opacity: 0, x: 16 }}
             animate={{ opacity: 1, x: 0 }}

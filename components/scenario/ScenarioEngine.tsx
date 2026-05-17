@@ -77,7 +77,7 @@ export function ScenarioEngine({
   return (
     <div className="max-w-3xl mx-auto flex flex-col gap-4 w-full">
       {/* Sub-level header */}
-      <div className="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
+      <div className="bg-white border border-slate-100 rounded-2xl p-4 shadow-xl">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="min-w-0">
             <span className="text-xs font-semibold uppercase tracking-widest text-blue-700">
@@ -95,7 +95,7 @@ export function ScenarioEngine({
       </div>
 
       {/* Decision tree map */}
-      <div className="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
+      <div className="bg-white border border-slate-100 rounded-2xl shadow-xl overflow-hidden">
         <button
           className="w-full px-4 py-3 text-left flex items-center justify-between hover:bg-slate-50 transition-colors"
           onClick={() => setTreeOpen((o) => !o)}
@@ -143,7 +143,7 @@ export function ScenarioEngine({
       </div>
 
       {/* Legal Context */}
-      <div className="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
+      <div className="bg-white border border-slate-100 rounded-2xl shadow-xl overflow-hidden">
         <button
           className="w-full px-4 py-3 text-left text-slate-600 text-sm font-semibold flex justify-between items-center hover:bg-slate-50 transition-colors"
           onClick={() => setContextOpen((o) => !o)}
@@ -171,7 +171,7 @@ export function ScenarioEngine({
 
       {/* Situation */}
       {!showFinal && (
-        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4">
+        <div className="bg-blue-50 border border-blue-100 rounded-2xl p-4 shadow-lg">
           <span className="text-xs font-semibold uppercase tracking-widest text-slate-400 block mb-2">
             Situation
           </span>

@@ -55,7 +55,7 @@ export function OutcomeCard({ node, onContinue, onBack, canGoBack }: OutcomeCard
 
   return (
     <motion.div
-      className={`rounded-2xl border-2 p-5 shadow-sm ${cfg.border} ${cfg.bg}`}
+      className={`rounded-2xl border-2 p-5 shadow-xl ${cfg.border} ${cfg.bg}`}
       initial={{ opacity: 0, scale: 0.98 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.28 }}
