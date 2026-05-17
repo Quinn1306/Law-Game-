@@ -52,7 +52,7 @@ export function AnimatedBackground() {
       return seed / 0x7fffffff
     }
 
-    const starCount = Math.round((w * h) / 7000)
+    const starCount = Math.round((w * h) / 22000)
     for (let i = 0; i < starCount; i++) {
       const x    = rng() * w
       // bias toward upper 75% of screen where stars show best
@@ -73,7 +73,8 @@ export function AnimatedBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0"
+      className="fixed inset-0 pointer-events-none"
+      style={{ zIndex: -1 }}
       aria-hidden="true"
     />
   )
