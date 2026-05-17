@@ -30,7 +30,7 @@ export default function ResultsPage() {
   }
 
   return (
-    <main className="min-h-screen min-h-dvh flex flex-col bg-slate-50">
+    <main className="min-h-screen min-h-dvh flex flex-col bg-transparent">
       <header className="bg-white border-b border-slate-200 px-5 py-3 flex items-center justify-between sticky top-0 z-20">
         <div className="flex items-center gap-2.5">
           <div className="flex items-center justify-center w-7 h-7 rounded bg-blue-700 text-white font-bold text-xs tracking-tight">
@@ -77,7 +77,7 @@ export default function ResultsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.12 }}
           >
-            <h2 className="text-slate-900 font-bold text-base mb-4">Phase 2 — Decision Paths</h2>
+            <h2 className="text-slate-900 font-bold text-base mb-4">Phase 2: Decision Paths</h2>
             <div className="space-y-3">
               {scenario.map((sl) => {
                 const path = scenarioPaths[sl.id] ?? []
@@ -143,7 +143,7 @@ export default function ResultsPage() {
             transition={{ delay: 0.3 }}
           >
             <h2 className="text-amber-800 font-bold text-base mb-3">
-              Three Structural Tensions — Summary
+              Three Structural Tensions: Summary
             </h2>
             <div className="space-y-3 text-sm">
               {scenario.map((sl) => (

@@ -1,4 +1,4 @@
-export interface Option {
+﻿export interface Option {
   id: string
   text: string
   correct: boolean
@@ -36,7 +36,7 @@ const questions: Question[] = [
       },
     ],
     explanation:
-      'The pre-Omnibus CSRD scope was set by Article 19a(1) as inserted into Directive 2013/34/EU by Directive (EU) 2022/2464. It captured all large undertakings as defined in Article 3(4) of the Accounting Directive — companies exceeding two of three size criteria. This captured approximately 50,000 companies across the EU. Option B describes the pre-Omnibus CSDDD scope, not the CSRD scope.',
+      'The pre-Omnibus CSRD scope was set by Article 19a(1) as inserted into Directive 2013/34/EU by Directive (EU) 2022/2464. It captured all large undertakings as defined in Article 3(4) of the Accounting Directive, companies exceeding two of three size criteria. This captured approximately 50,000 companies across the EU. Option B describes the pre-Omnibus CSDDD scope, not the CSRD scope.',
     legalBasis:
       'Art. 19a(1), Directive 2013/34/EU consolidated 28.05.2024; Art. 3(4), Directive 2013/34/EU',
     timeLimit: 30,
@@ -60,7 +60,7 @@ const questions: Question[] = [
       },
     ],
     explanation:
-      'Article 19a(2)(a)(iii) required disclosure of "the plans of the undertaking" for Paris-compatibility — a comply-or-explain disclosure obligation. It did not require companies to have a plan or to implement one. Option B describes what Article 22(1) of the pre-Omnibus CSDDD required — a separate and independent obligation to adopt and put into effect a transition plan.',
+      'Article 19a(2)(a)(iii) required disclosure of "the plans of the undertaking" for Paris-compatibility, a comply-or-explain disclosure obligation. It did not require companies to have a plan or to implement one. Option B describes what Article 22(1) of the pre-Omnibus CSDDD required, a separate and independent obligation to adopt and put into effect a transition plan.',
     legalBasis:
       'Art. 19a(2)(a)(iii), Directive 2013/34/EU consolidated 28.05.2024; Art. 22(1), Directive (EU) 2024/1760 (original)',
     timeLimit: 30,
@@ -83,7 +83,7 @@ const questions: Question[] = [
       },
     ],
     explanation:
-      'The pre-Omnibus CSDDD scope was set by Article 2(1)(a) of Directive (EU) 2024/1760. Both conditions had to be met simultaneously (AND, not OR). This captured approximately 5,000–6,000 companies — a much narrower population than the CSRD. Both conditions also had to be met for two consecutive financial years under Article 2(5).',
+      'The pre-Omnibus CSDDD scope was set by Article 2(1)(a) of Directive (EU) 2024/1760. Both conditions had to be met simultaneously (AND, not OR). This captured approximately 5,000–6,000 companies, a much narrower population than the CSRD. Both conditions also had to be met for two consecutive financial years under Article 2(5).',
     legalBasis:
       'Art. 2(1)(a) and Art. 2(5), Directive (EU) 2024/1760 (original)',
     timeLimit: 30,
@@ -97,7 +97,7 @@ const questions: Question[] = [
     options: [
       {
         id: 'a',
-        text: 'Companies that reported a transition plan under the CSRD were deemed to have satisfied the obligation to ADOPT a transition plan under the CSDDD — but were still required to put it into effect',
+        text: 'Companies that reported a transition plan under the CSRD were deemed to have satisfied the obligation to ADOPT a transition plan under the CSDDD, but were still required to put it into effect',
         correct: true,
       },
       {
@@ -121,7 +121,7 @@ const questions: Question[] = [
     options: [
       {
         id: 'a',
-        text: 'Companies subject to CSRD sustainability reporting were exempt from the separate CSDDD annual statement obligation — their CSRD report satisfied both instruments',
+        text: 'Companies subject to CSRD sustainability reporting were exempt from the separate CSDDD annual statement obligation, their CSRD report satisfied both instruments',
         correct: true,
       },
       {
@@ -131,7 +131,7 @@ const questions: Question[] = [
       },
     ],
     explanation:
-      'Article 16(2) CSDDD provided that the obligation in Article 16(1) — to publish an annual statement on due diligence matters — did not apply to companies subject to Articles 19a, 29a or 40a of Directive 2013/34/EU. For dual-scope companies, the CSRD sustainability report satisfied both the CSRD reporting obligation and the CSDDD communication obligation. Recitals 62 and 63 of Directive (EU) 2024/1760 confirm this was a deliberate design choice to avoid duplication.',
+      'Article 16(2) CSDDD provided that the obligation in Article 16(1), to publish an annual statement on due diligence matters, did not apply to companies subject to Articles 19a, 29a or 40a of Directive 2013/34/EU. For dual-scope companies, the CSRD sustainability report satisfied both the CSRD reporting obligation and the CSDDD communication obligation. Recitals 62 and 63 of Directive (EU) 2024/1760 confirm this was a deliberate design choice to avoid duplication.',
     legalBasis:
       'Art. 16(2), Directive (EU) 2024/1760 (original); Recitals 62 and 63, Directive (EU) 2024/1760',
     timeLimit: 30,
@@ -154,7 +154,7 @@ const questions: Question[] = [
       },
     ],
     explanation:
-      'Article 29(1) established the operative EU-level liability rule — setting the conditions under which companies could be held liable across all Member States. Option B describes what Article 29(2) provided, which was a supplementary guarantee of full compensation once liability was established. Article 29(1) was the harmonised substantive standard; Article 29(2) was the remedy. Both existed pre-Omnibus.',
+      'Article 29(1) established the operative EU-level liability rule, setting the conditions under which companies could be held liable across all Member States. Option B describes what Article 29(2) provided, which was a supplementary guarantee of full compensation once liability was established. Article 29(1) was the harmonised substantive standard; Article 29(2) was the remedy. Both existed pre-Omnibus.',
     legalBasis:
       'Art. 29(1) and (2), Directive (EU) 2024/1760 (original)',
     timeLimit: 30,
@@ -180,7 +180,7 @@ const questions: Question[] = [
       },
     ],
     explanation:
-      'Article 19a(1) of the Accounting Directive was replaced by Article 2(4)(a) of Directive (EU) 2026/470. The new threshold is a dual condition: both EUR 450 million net turnover AND 1,000 employees must be exceeded. Member States must transpose the new scope provisions by 19 March 2027. Article 3(4) (the large undertaking definition) was not amended — but it is now decoupled from sustainability reporting scope.',
+      'Article 19a(1) of the Accounting Directive was replaced by Article 2(4)(a) of Directive (EU) 2026/470. The new threshold is a dual condition: both EUR 450 million net turnover AND 1,000 employees must be exceeded. Member States must transpose the new scope provisions by 19 March 2027. Article 3(4) (the large undertaking definition) was not amended, but it is now decoupled from sustainability reporting scope.',
     legalBasis:
       'Art. 19a(1) as replaced by Art. 2(4)(a), Directive (EU) 2026/470; Art. 3(4), Directive 2013/34/EU (unchanged); Art. 6(1), Directive (EU) 2026/470 (transposition deadline)',
     timeLimit: 30,
@@ -218,17 +218,17 @@ const questions: Question[] = [
     options: [
       {
         id: 'a',
-        text: 'No — Article 22 was deleted in its entirety by Directive (EU) 2026/470. There is no CSDDD obligation to adopt, implement or update a transition plan.',
+        text: 'No: Article 22 was deleted in its entirety by Directive (EU) 2026/470. There is no CSDDD obligation to adopt, implement or update a transition plan.',
         correct: true,
       },
       {
         id: 'b',
-        text: 'Yes — Article 22 still requires companies to adopt a transition plan but no longer requires them to put it into effect',
+        text: 'Yes: Article 22 still requires companies to adopt a transition plan but no longer requires them to put it into effect',
         correct: false,
       },
     ],
     explanation:
-      'Article 4(16) of Directive (EU) 2026/470 deleted Article 22 of Directive (EU) 2024/1760 in its entirety. There is no remaining CSDDD provision on transition plans. The only transition plan obligations currently in EU law are the disclosure obligations in Article 19a(2)(a)(iii) of the Accounting Directive — which require companies within CSRD scope to disclose any plans they have. Option B is incorrect: neither adoption nor implementation is required under the CSDDD any longer.',
+      'Article 4(16) of Directive (EU) 2026/470 deleted Article 22 of Directive (EU) 2024/1760 in its entirety. There is no remaining CSDDD provision on transition plans. The only transition plan obligations currently in EU law are the disclosure obligations in Article 19a(2)(a)(iii) of the Accounting Directive, which require companies within CSRD scope to disclose any plans they have. Option B is incorrect: neither adoption nor implementation is required under the CSDDD any longer.',
     legalBasis:
       'Art. 4(16), Directive (EU) 2026/470; Art. 22, Directive (EU) 2024/1760 (deleted)',
     timeLimit: 30,
@@ -242,7 +242,7 @@ const questions: Question[] = [
     options: [
       {
         id: 'a',
-        text: 'Where a company is held liable under national law, victims have a right to full compensation. There is no EU-level rule establishing when liability arises — that is determined entirely by national law.',
+        text: 'Where a company is held liable under national law, victims have a right to full compensation. There is no EU-level rule establishing when liability arises, that is determined entirely by national law.',
         correct: true,
       },
       {
@@ -252,7 +252,7 @@ const questions: Question[] = [
       },
     ],
     explanation:
-      'Article 29(1) — the operative EU civil liability rule — was deleted by Article 4(20)(a) of Directive (EU) 2026/470. What remains is Article 29(2): where a company is held liable under national law, victims have a right to full compensation without overcompensation. The EU no longer specifies when liability arises. That question is governed by national law, determined under Rome II (Regulation (EC) 864/2007). Article 29(3)(d) on representative actions and Article 29(7) on Rome II overriding mandatory provisions were also deleted.',
+      'Article 29(1), the operative EU civil liability rule, was deleted by Article 4(20)(a) of Directive (EU) 2026/470. What remains is Article 29(2): where a company is held liable under national law, victims have a right to full compensation without overcompensation. The EU no longer specifies when liability arises. That question is governed by national law, determined under Rome II (Regulation (EC) 864/2007). Article 29(3)(d) on representative actions and Article 29(7) on Rome II overriding mandatory provisions were also deleted.',
     legalBasis:
       'Art. 29(1) deleted by Art. 4(20)(a), Directive (EU) 2026/470; Art. 29(2) as replaced by Art. 4(20)(b), Directive (EU) 2026/470; Regulation (EC) 864/2007 (Rome II)',
     timeLimit: 30,
@@ -266,7 +266,7 @@ const questions: Question[] = [
     options: [
       {
         id: 'a',
-        text: 'CSRD reporting obligations only — EuroMed AG meets the Article 19a(1) threshold but not the Article 2(1)(a) CSDDD threshold',
+        text: 'CSRD reporting obligations only, EuroMed AG meets the Article 19a(1) threshold but not the Article 2(1)(a) CSDDD threshold',
         correct: true,
       },
       {
@@ -276,7 +276,7 @@ const questions: Question[] = [
       },
     ],
     explanation:
-      'EuroMed AG exceeds both EUR 450m turnover AND 1,000 employees, so it falls within the post-Omnibus CSRD scope under Article 19a(1) as replaced. But it does not exceed 5,000 employees or EUR 1.5bn turnover, so it falls outside the post-Omnibus CSDDD scope under Article 2(1)(a) as replaced. EuroMed AG must publish a CSRD sustainability report. It has no CSDDD due diligence obligations. This is the core of the Scope Gap — it must disclose supply chain adverse impacts under the CSRD without any CSDDD obligation to address them.',
+      'EuroMed AG exceeds both EUR 450m turnover AND 1,000 employees, so it falls within the post-Omnibus CSRD scope under Article 19a(1) as replaced. But it does not exceed 5,000 employees or EUR 1.5bn turnover, so it falls outside the post-Omnibus CSDDD scope under Article 2(1)(a) as replaced. EuroMed AG must publish a CSRD sustainability report. It has no CSDDD due diligence obligations. This is the core of the Scope Gap, it must disclose supply chain adverse impacts under the CSRD without any CSDDD obligation to address them.',
     legalBasis:
       'Art. 19a(1) as replaced, Directive 2013/34/EU; Art. 2(1)(a) as replaced, Directive (EU) 2024/1760',
     timeLimit: 30,
@@ -314,17 +314,17 @@ const questions: Question[] = [
     options: [
       {
         id: 'a',
-        text: 'Larger — both scope thresholds were raised simultaneously, but the CSDDD threshold was raised more substantially, widening the gap between the two populations',
+        text: 'Larger, both scope thresholds were raised simultaneously, but the CSDDD threshold was raised more substantially, widening the gap between the two populations',
         correct: true,
       },
       {
         id: 'b',
-        text: 'Smaller — Omnibus I was designed to bring the two frameworks closer together',
+        text: 'Smaller, Omnibus I was designed to bring the two frameworks closer together',
         correct: false,
       },
     ],
     explanation:
-      'Before Omnibus I, the CSRD captured approximately 50,000 companies and the CSDDD captured approximately 5,000–6,000 — a gap of approximately 44,000–45,000 companies. After Omnibus I, the CSRD captures approximately 5,000 companies and the CSDDD captures approximately 900–1,000 — a gap of approximately 4,000–4,100. Both absolute numbers are smaller, but the proportional gap has widened. Crucially, the pre-Omnibus design anticipated the gap closing over time: Article 36 CSDDD required the Commission to review thresholds by 2030 with a view to expansion. Omnibus I moved in the opposite direction, raising both thresholds. The convergence trajectory has been reversed rather than realised. Article 36 survives unchanged but now operates from a substantially higher baseline.',
+      'Before Omnibus I, the CSRD captured approximately 50,000 companies and the CSDDD captured approximately 5,000–6,000, a gap of approximately 44,000–45,000 companies. After Omnibus I, the CSRD captures approximately 5,000 companies and the CSDDD captures approximately 900–1,000, a gap of approximately 4,000–4,100. Both absolute numbers are smaller, but the proportional gap has widened. Crucially, the pre-Omnibus design anticipated the gap closing over time: Article 36 CSDDD required the Commission to review thresholds by 2030 with a view to expansion. Omnibus I moved in the opposite direction, raising both thresholds. The convergence trajectory has been reversed rather than realised. Article 36 survives unchanged but now operates from a substantially higher baseline.',
     legalBasis:
       'Art. 19a(1) as replaced, Directive 2013/34/EU; Art. 2(1)(a) as replaced, Directive (EU) 2024/1760; Art. 36, Directive (EU) 2024/1760 (unchanged); European Commission, COM(2025) 81 final, p 5',
     timeLimit: 30,

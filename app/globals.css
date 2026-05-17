@@ -28,7 +28,7 @@ html {
 }
 
 body {
-  background-color: var(--bg-base);
+  background-color: #eff6ff;
   color: var(--text-primary);
   font-family: var(--font-inter, 'Inter', system-ui, -apple-system, sans-serif);
   -webkit-font-smoothing: antialiased;

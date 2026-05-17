@@ -15,8 +15,8 @@ interface QuestionCardProps {
 }
 
 const SECTION_LABELS: Record<string, string> = {
-  A: 'Section A — Pre-Omnibus Law',
-  B: 'Section B — Post-Omnibus Law',
+  A: 'Section A: Pre-Omnibus Law',
+  B: 'Section B: Post-Omnibus Law',
 }
 
 export function QuestionCard({ question, questionNumber, total, onNext }: QuestionCardProps) {

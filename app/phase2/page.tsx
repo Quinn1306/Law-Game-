@@ -22,14 +22,14 @@ export default function Phase2Page() {
 
   if (!started) {
     return (
-      <main className="min-h-screen min-h-dvh flex flex-col bg-slate-50">
+      <main className="min-h-screen min-h-dvh flex flex-col bg-transparent">
         <header className="bg-white border-b border-slate-200 px-5 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <div className="flex items-center justify-center w-7 h-7 rounded bg-blue-700 text-white font-bold text-xs tracking-tight">
               ERA
             </div>
             <span className="text-slate-500 text-xs font-semibold uppercase tracking-wider">
-              Phase 2 — Scenario Module
+              Phase 2: Scenario Module
             </span>
           </div>
           {userName && <span className="text-slate-400 text-xs hidden sm:block">{userName}</span>}
@@ -53,9 +53,9 @@ export default function Phase2Page() {
               </div>
               <div className="text-blue-700 text-sm font-medium">
                 {score >= 10
-                  ? 'Excellent — strong foundation for Phase 2'
+                  ? 'Excellent: strong foundation for Phase 2'
                   : score >= 7
-                  ? 'Good — some gaps to revisit after Phase 2'
+                  ? 'Good: some gaps to revisit after Phase 2'
                   : 'Phase 2 will clarify the core legal structure'}
               </div>
             </div>
@@ -65,7 +65,7 @@ export default function Phase2Page() {
             </span>
             <h1 className="text-3xl font-bold text-slate-900 mb-3">Scenario Module</h1>
             <p className="text-slate-500 text-sm leading-relaxed mb-6">
-              Apply post-Omnibus law to EuroMed AG — a German manufacturer with 1,200 employees and EUR 500m turnover. Three sub-levels. Three structural tensions. No time pressure.
+              Apply post-Omnibus law to EuroMed AG, a German manufacturer with 1,200 employees and EUR 500m turnover. Three sub-levels. Three structural tensions. No time pressure.
             </p>
 
             <div className="space-y-2 mb-8">
@@ -95,7 +95,7 @@ export default function Phase2Page() {
   }
 
   return (
-    <main className="min-h-screen min-h-dvh flex flex-col bg-slate-50">
+    <main className="min-h-screen min-h-dvh flex flex-col bg-transparent">
       {/* Header */}
       <header className="bg-white border-b border-slate-200 px-5 py-3 flex items-center justify-between sticky top-0 z-20">
         <div className="flex items-center gap-2.5">
@@ -103,7 +103,7 @@ export default function Phase2Page() {
             ERA
           </div>
           <span className="text-slate-500 text-xs font-semibold uppercase tracking-wider">
-            Phase 2 — Scenario Module
+            Phase 2: Scenario Module
           </span>
         </div>
         <div className="flex items-center gap-2">

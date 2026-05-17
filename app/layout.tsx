@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { AnimatedBackground } from '@/components/ui/AnimatedBackground'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -16,7 +17,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'ERA — EU Corporate Sustainability Law Training',
+  title: 'ERA: EU Corporate Sustainability Law Training',
   description:
     'Interactive training tool on CSRD, CSDDD and Omnibus I for EU legal professionals. Developed for the European Law Academy (ERA).',
 }
@@ -24,7 +25,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`h-full ${inter.variable}`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <AnimatedBackground />
+        {children}
+      </body>
     </html>
   )
 }

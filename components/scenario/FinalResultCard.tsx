@@ -79,9 +79,9 @@ export function FinalResultCard({
         <div className="inline-block text-xs font-semibold uppercase tracking-widest text-blue-700 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full mb-3">
           Final Result
         </div>
-        <div className="text-slate-900 font-bold text-lg">EuroMed AG — Legal Position</div>
+        <div className="text-slate-900 font-bold text-lg">EuroMed AG: Legal Position</div>
         <div className="text-slate-400 text-xs mt-1">
-          All pathways converge here — this is the actual legal position
+          All pathways converge here. This is the actual legal position.
         </div>
       </div>
 

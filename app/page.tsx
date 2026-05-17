@@ -14,7 +14,7 @@ const PHASES = [
   {
     phase: 'Phase 2',
     title: 'Scenario Module',
-    desc: '3 branching decision scenarios — EuroMed AG',
+    desc: '3 branching decision scenarios for EuroMed AG',
     num: '02',
   },
 ]
@@ -62,7 +62,7 @@ export default function LandingPage() {
   }
 
   return (
-    <main className="min-h-screen min-h-dvh flex flex-col bg-slate-50">
+    <main className="min-h-screen min-h-dvh flex flex-col bg-transparent">
       <AnimatePresence mode="wait">
         {step === 'name' ? (
           <motion.div
@@ -198,7 +198,7 @@ export default function LandingPage() {
                 transition={{ duration: 0.5 }}
               >
                 <span className="inline-block text-xs font-semibold uppercase tracking-widest text-blue-700 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full mb-5">
-                  Directive (EU) 2026/470 — Omnibus I
+                  Directive (EU) 2026/470, Omnibus I
                 </span>
                 <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 leading-tight mb-4">
                   CSRD &amp; CSDDD

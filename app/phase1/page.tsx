@@ -20,7 +20,7 @@ export default function Phase1Page() {
   }
 
   return (
-    <main className="min-h-screen min-h-dvh flex flex-col bg-slate-50">
+    <main className="min-h-screen min-h-dvh flex flex-col bg-transparent">
       {/* Header */}
       <header className="bg-white border-b border-slate-200 px-5 py-3 flex items-center justify-between sticky top-0 z-20">
         <div className="flex items-center gap-2.5">
@@ -28,7 +28,7 @@ export default function Phase1Page() {
             ERA
           </div>
           <span className="text-slate-500 text-xs font-semibold uppercase tracking-wider">
-            Phase 1 — Knowledge Module
+            Phase 1: Knowledge Module
           </span>
         </div>
         <div className="flex items-center gap-3">
